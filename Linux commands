@@ -1,0 +1,100 @@
+#Linux commands
+
+whoami #shows who is the current user
+sudo bash #changes to the root user
+su peter #changes the user to peter
+
+#user creation and user deletion
+sudo useradd chukky
+sudo passwd chukky
+
+sudo userdel chukky
+
+#group creation and deletion
+
+sudo groupadd <groupname>
+sudo groupdel <groupname>
+
+#file creation
+touch filename.ext // user sudo touch filename.ext 
+
+#remove files
+rm -r <filename> #removes the non empty directories
+rm -rp <filename> #removes the non empty directories and the parent directories
+
+#remove directory
+rmdir -p <dirname> #removes both parent and child dir
+rmdir -pv <dirname> #removes all the parents and sub directories along with the verbose
+
+#search for file
+grep <word> <filename>
+grep -i <filename> #returns the result for key sensitive strings
+grep -n <filename> #returns matching string with their linenumber
+grep -v <filename> #returns the number of lines not matching the search string
+grep -c <filename> #returns the number of results that matches the search string
+
+sort <filename> #sort files
+sort -r <filename> #sort files in the reverse order
+
+#permissions
+chown root <filename> #change owner and group of a file
+chmod 777 <filename> #changes permissions for the user, groups and others
+
+#open files
+lsof
+lsof -u <username>
+
+#zip and unzip a file
+
+tar -cvf filename source-folder #zip a file
+tar -xvf tarfilename source-folder #unzip a file
+
+#file manipulation
+sed 's/chuky/peter/' <filename> #this changes chukky to peter in a file
+
+
+free #shows the amount of free space
+free -b #bytes
+free -k #kilobyte
+free -g #gigabyte
+free -m #megabyte
+
+#secure shell authenticiation
+ssh masters-ip #execute this command on the slave to access the master
+ssh slave-ip #execute this command on the master to access the slave
+ssh-keygen -t rsa #generate a secure keychain
+
+
+#Network config 
+ip address
+ip link #display link layer info available
+netstat -a #displays network connections (listening port, routing table
+netstat -at #displays all the tcp ports
+nslookup #networkserver lookup - troubleshoot DNS related problems
+nslookup <domainname>
+curl options URL #syntax
+curl -o 
+ifconfig -a
+ifconfig options interface
+ifconfig -s
+
+awk '/RAM/ {print}' <filename> #this prints the line that contains RAM in the file
+
+#translating and deleting characters
+cat <filename> | tr "[a-z]" "[A-Z]"
+
+#env cmd
+env #list of all env variables on my environment
+env -i command #run a command with an empty variable
+env -u <variable-name> #rm a variable
+
+#Firewall
+service iptables stop #disable firewalls
+
+#disk utilization
+sudo du -h -d 1 /var/ #lookup the disk utilization per path
+
+#follow ups
+watch
+dd command
+awk command
