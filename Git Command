@@ -1,0 +1,21 @@
+git config --global user.name buildwithpeter
+git config --global user.email chukwuka.okumbor@gmail.com
+
+git init <repo name> #start a new repo
+
+git clone <repo URL>
+
+git add <filename> #adds a file to the staging area
+git commit -m "your message" 
+git commit -a #commits any files you have 
+git rm <filename>
+git show <commit ID> #shows the metadata and the content changes of these specified commits
+git remote add <variable name> <remove server link> #connect local repo to the remote server
+git pull <repo link> #fetches update from the remote server and updates yoyur repo
+git branch #lists all local branch in your local repo
+git branch <branch name> #get a new branch
+
+git checkout -b b4 # creates a branch and switch us to that branch
+
+git merge <branch name> #merges the specified branch history to the current branch
+git rebase <branch name> #move all your work from current branch to the master branch
