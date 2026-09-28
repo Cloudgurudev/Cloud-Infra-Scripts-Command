@@ -18,10 +18,19 @@ sudo groupdel <groupname>
 #file creation
 touch filename.ext // user sudo touch filename.ext 
 
+#list files
+ls #list file in a current directory
+ls <filename>
+ls -R #list all files recursively 
+
+#find -alternative to ls
+find . -type f -name "app.txt"
+find . -type f -name "*.txt" | xargs cat |grep "ERROR" | sort -k4 | uniq -f3 >errors.log
+
 #remove files
 rm -r <filename> #removes the non empty directories
 rm -rp <filename> #removes the non empty directories and the parent directories
-
+rm *.xml #removes all .xml files in a directory
 #remove directory
 rmdir -p <dirname> #removes both parent and child dir
 rmdir -pv <dirname> #removes all the parents and sub directories along with the verbose
@@ -93,6 +102,13 @@ service iptables stop #disable firewalls
 
 #disk utilization
 sudo du -h -d 1 /var/ #lookup the disk utilization per path
+
+
+
+
+
+
+
 
 #follow ups
 watch
