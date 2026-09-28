@@ -114,3 +114,5 @@ sudo du -h -d 1 /var/ #lookup the disk utilization per path
 watch
 dd command
 awk command
+head
+tee
